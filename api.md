@@ -10,6 +10,13 @@
   - `username` (String, required): User's username.
   - `email` (String, required): User's email address.
   - `password` (String, required): User's password.
+  - `json
+   {
+  "username": "example_user",
+  "email": "user@example.com",
+  "password": "example_password"
+    }
+`
 - **Response:**
   - Status Code: 201 Created
   - Body: Newly registered user object
@@ -33,7 +40,7 @@
 - **Endpoint:** `/api/users`
 - **Method:** GET
 - **Description:** Retrieve the profile information of the authenticated user.
-- **Authorization:** Required (Bearer Token)
+- **Authorization:** Required (Token)
 - **Response:**
   - Status Code: 200 OK
   - Body: User profile object
@@ -43,7 +50,7 @@
 - **Endpoint:** `/api/users`
 - **Method:** PUT
 - **Description:** Update the profile information of the authenticated user.
-- **Authorization:** Required (Bearer Token)
+- **Authorization:** Required (Token)
 - **Request Body:** Same as register user endpoint, excluding password
 - **Response:** Same as register user endpoint
 - **Error Responses:** Same as above
@@ -52,7 +59,7 @@
 - **Endpoint:** `/api/users`
 - **Method:** DELETE
 - **Description:** Delete the account of the authenticated user.
-- **Authorization:** Required (Bearer Token)
+- **Authorization:** Required (Token)
 - **Response:**
   - Status Code: 204 No Content
   - Body: Empty
@@ -84,7 +91,7 @@
 - **Endpoint:** `/api/snippets`
 - **Method:** POST
 - **Description:** Create a new snippet.
-- **Authorization:** Required (Bearer Token)
+- **Authorization:** Required (Token)
 - **Request Body:**
   - `title` (String, required): Title of the snippet.
   - `description` (String): Description of the snippet.
@@ -99,7 +106,7 @@
 - **Endpoint:** `/api/snippets/:snippetId`
 - **Method:** PUT
 - **Description:** Update an existing snippet by its ID.
-- **Authorization:** Required (Bearer Token)
+- **Authorization:** Required (Token)
 - **Request Body:** Same as create snippet endpoint
 - **Response:** Same as create snippet endpoint
 - **Error Responses:** Same as above
@@ -108,7 +115,7 @@
 - **Endpoint:** `/api/snippets/:snippetId`
 - **Method:** DELETE
 - **Description:** Delete a snippet by its ID.
-- **Authorization:** Required (Bearer Token)
+- **Authorization:** Required (Token)
 - **Response:**
   - Status Code: 204 No Content
   - Body: Empty
@@ -118,7 +125,7 @@
 - **Endpoint:** `/api/snippets/approve/:snippetId`
 - **Method:** PUT
 - **Description:** Approve or disapprove a snippet by its ID.
-- **Authorization:** Required (Bearer Token)
+- **Authorization:** Required (Token)
 - **Request Body:**
   - `is_approved` (Boolean): Set to true to approve, false to disapprove.
 - **Response:**
@@ -130,7 +137,7 @@
 - **Endpoint:** `/api/snippets/love/:snippetId`
 - **Method:** PUT
 - **Description:** Love a snippet by its ID.
-- **Authorization:** Required (Bearer Token)
+- **Authorization:** Required (Token)
 - **Response:**
   - Status Code: 200 OK
   - Body: Message confirming snippet loved
@@ -142,7 +149,7 @@
 - **Endpoint:** `/api/comments/:snippetId`
 - **Method:** POST
 - **Description:** Add a comment to a specific snippet.
-- **Authorization:** Required (Bearer Token)
+- **Authorization:** Required (Token)
 - **Request Body:**
   - `content` (String, required): Content of the comment.
 - **Response:**
@@ -154,7 +161,7 @@
 - **Endpoint:** `/api/comments/:commentId`
 - **Method:** DELETE
 - **Description:** Delete a comment by its ID.
-- **Authorization:** Required (Bearer Token)
+- **Authorization:** Required (Token)
 - **Response:**
   - Status Code: 204 No Content
   - Body: Empty
@@ -176,7 +183,7 @@
 - **Endpoint:** `/api/favorites/:snippetId`
 - **Method:** POST
 - **Description:** Add a snippet to the authenticated user's favorites.
-- **Authorization:** Required (Bearer Token)
+- **Authorization:** Required (Token)
 - **Response:**
   - Status Code: 200 OK
   - Body: Message confirming snippet added to favorites
@@ -186,7 +193,7 @@
 - **Endpoint:** `/api/favorites/:snippetId`
 - **Method:** DELETE
 - **Description:** Remove a snippet from the authenticated user's favorites.
-- **Authorization:** Required (Bearer Token)
+- **Authorization:** Required (Token)
 - **Response:**
   - Status Code: 200 OK
   - Body: Message confirming snippet removed from favorites
@@ -198,7 +205,7 @@
 - **Endpoint:** `/api/notifications`
 - **Method:** GET
 - **Description:** Retrieve notifications for the authenticated user.
-- **Authorization:** Required (Bearer Token)
+- **Authorization:** Required (Token)
 - **Response:**
   - Status Code: 200 OK
   - Body: List of notifications
