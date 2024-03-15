@@ -10,7 +10,7 @@
   - `username` (String, required): User's username.
   - `email` (String, required): User's email address.
   - `password` (String, required): User's password.
-  - `json
+  - `json : 
    {
   "username": "example_user",
   "email": "user@example.com",
@@ -29,6 +29,12 @@
 - **Request Body:**
   - `email` (String, required): User's email address.
   - `password` (String, required): User's password.
+  - `json :   
+  {
+  "email": "user@example.com",
+  "password": "your_password"
+  }
+`
 - **Response:**
   - Status Code: 200 OK
   - Body: JWT token for authenticated user
