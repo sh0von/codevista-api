@@ -70,6 +70,8 @@
 - **Method:** DELETE
 - **Description:** Delete the account of the authenticated user.
 - **Authorization:** Required (Token)
+- `curl -X GET http://localhost:3000/api/snippets
+`
 - **Response:**
   - Status Code: 204 No Content
   - Body: Empty
@@ -223,7 +225,7 @@
 ## Notification Endpoints
 
 ### Get Notifications for User
-- **Endpoint:** `/api/notifications/:userId`
+- **Endpoint:** `/api/notifications`
 - **Method:** GET
 - **Description:** Retrieve notifications for the authenticated user.
 - **Authorization:** Required (Token)
