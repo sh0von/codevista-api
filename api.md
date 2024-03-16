@@ -10,8 +10,7 @@
   - `username` (String, required): User's username.
   - `email` (String, required): User's email address.
   - `password` (String, required): User's password.
-  - `json : 
-   {
+  - `{
   "username": "example_user",
   "email": "user@example.com",
   "password": "example_password"
@@ -29,8 +28,7 @@
 - **Request Body:**
   - `email` (String, required): User's email address.
   - `password` (String, required): User's password.
-  - `json :   
-  {
+  - `{
   "email": "user@example.com",
   "password": "your_password"
   }
@@ -38,8 +36,7 @@
 - **Response:**
   - Status Code: 200 OK
   - Body: JWT token for authenticated user
-  - `json
-  {
+  - `{
   "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c"
 }
 `
@@ -108,6 +105,13 @@
   - `description` (String): Description of the snippet.
   - `code` (String, required): Code content of the snippet.
   - `language` (String, required): Programming language of the snippet.
+  - `{
+  "title": "Example Snippet",
+  "description": "This is an example snippet created for demonstration purposes.",
+  "code": "console.log('Hello, World!');",
+  "language": "JavaScript"
+}
+`
 - **Response:**
   - Status Code: 201 Created
   - Body: Newly created snippet object
@@ -163,6 +167,10 @@
 - **Authorization:** Required (Token)
 - **Request Body:**
   - `content` (String, required): Content of the comment.
+  - `{
+  "content": "This is a comment on the snippet. Great code!"
+}
+`
 - **Response:**
   - Status Code: 201 Created
   - Body: Newly created comment object
@@ -213,7 +221,7 @@
 ## Notification Endpoints
 
 ### Get Notifications for User
-- **Endpoint:** `/api/notifications`
+- **Endpoint:** `/api/notifications/:userId`
 - **Method:** GET
 - **Description:** Retrieve notifications for the authenticated user.
 - **Authorization:** Required (Token)
