@@ -49,6 +49,8 @@
 - **Method:** GET
 - **Description:** Retrieve the profile information of the authenticated user.
 - **Authorization:** Required (Token)
+- `curl -X GET http://localhost:3000/api/users -H 'Authorization: token'
+`
 - **Response:**
   - Status Code: 200 OK
   - Body: User profile object
